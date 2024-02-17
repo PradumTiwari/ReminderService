@@ -10,7 +10,7 @@ const setupAndStartServer=()=>{
 
    app.listen(PORT,()=>{
     console.log(`Server is running on port ${PORT}`);
-    sendBasicEmail("DemoSender@gmail.com","satendarpradum@gmail.com","The Emails Can Be valid as well as Invalid","This Email is created By nodemailer when configure with transport object BATA Aur sab Kya HAal")
+    sendBasicEmail("DemoSender@gmail.com","ayush94256@gmail.com","The Emails Can Be valid as well as Invalid","This Email is created By nodemailer when configure with transport object BATA Aur sab Kya HAal")
    });
 }
 
