@@ -19,8 +19,17 @@ const ticketRepository=new TicketRepository();
 const fetchPendingEmails=async(timestamp)=>{
     try {
         
-        const response=await ticketRepository.getAll();
+        const response=await ticketRepository.get({status:'PENDING'});
         return response;
+    } catch (error) {
+        console.log(error);
+        throw error;
+    }
+}
+
+const updateTicket=async(ticketId,status)=>{
+    try {
+        const response=await ticketRepository.update(ticketId,status)
     } catch (error) {
         console.log(error);
         throw error;
@@ -40,5 +49,6 @@ const createNotification=async(data)=>{
 module.exports={
     sendBasicEmail,
     fetchPendingEmails,
-    createNotification
+    createNotification,
+    updateTicket
 }
